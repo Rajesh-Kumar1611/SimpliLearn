@@ -1,31 +1,16 @@
 package simpli.kvp.automate.org;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
-
-import org.apache.commons.io.FileUtils;
-import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
-
-import readtestdata.kvp.org.ActionCap;
 import readtestdata.kvp.org.ReadData;
 import readtestdata.kvp.org.StoreData;
-import readtestdata.kvp.org.Utilities;
 //import readtestdata.kvp.org.TakeScreenshot;
 import simplilearn.kvp.pojo.Lead;
 

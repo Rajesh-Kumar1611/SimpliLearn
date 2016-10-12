@@ -2,19 +2,13 @@ package simpli.kvp.automate.org;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
-
-import org.jboss.netty.channel.StaticChannelPipeline;
-
-import com.sforce.soap.partner.sobject.SObject;
-
 import readtestdata.kvp.org.ReadData;
 import readtestdata.kvp.org.StoreData;
 import simpli.kvpsalesforceapi.org.SalesforceUtility;
 import simplilearn.kvp.pojo.Lead;
+
+import com.sforce.soap.partner.sobject.SObject;
 
 public class MetaDataTest {
 

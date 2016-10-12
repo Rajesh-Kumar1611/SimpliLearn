@@ -2,17 +2,13 @@ package simpli.kvp.automate.org;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
-
-import org.apache.poi.util.SystemOutLogger;
-
-import com.sforce.soap.partner.sobject.SObject;
-
 import readtestdata.kvp.org.ReadData;
 import readtestdata.kvp.org.StoreData;
 import simpli.kvpsalesforceapi.org.SalesforceUtility;
 import simplilearn.kvp.pojo.Lead;
+
+import com.sforce.soap.partner.sobject.SObject;
 
 public class ReferandEarn {
 	
@@ -20,7 +16,7 @@ public class ReferandEarn {
 				
 		ReadData readobj= new ReadData();
 		StoreData storeobj= new StoreData();
-		Lead lead= new Lead();
+//		Lead lead= new Lead();
 		readobj.getpath("D:/TestData2.xlsx");
 		readobj.getsheetindex(4);
 		readobj.rowcount();
