@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="101665" started-at="2016-09-14T04:58:52Z" finished-at="2016-09-14T05:00:33Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="101665" started-at="2016-09-14T04:58:52Z" finished-at="2016-09-14T05:00:33Z">
+      <class name="simpli.kvp.automate.org.TestLead">
+        <test-method status="PASS" signature="testlogin()[pri:0, instance:simpli.kvp.automate.org.TestLead@6767c1fc]" name="testlogin" duration-ms="36036" started-at="2016-09-14T10:28:52Z" finished-at="2016-09-14T10:29:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testlogin -->
+        <test-method status="PASS" signature="leaddata()[pri:1, instance:simpli.kvp.automate.org.TestLead@6767c1fc]" name="leaddata" duration-ms="58929" started-at="2016-09-14T10:29:28Z" finished-at="2016-09-14T10:30:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- leaddata -->
+        <test-method status="PASS" signature="checkstatus()[pri:2, instance:simpli.kvp.automate.org.TestLead@6767c1fc]" name="checkstatus" duration-ms="6637" started-at="2016-09-14T10:30:27Z" finished-at="2016-09-14T10:30:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkstatus -->
+      </class> <!-- simpli.kvp.automate.org.TestLead -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
