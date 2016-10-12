@@ -80,14 +80,9 @@ public class SalesforceUtility {
 		
 	}
 	
-	public void Insert(String url, int sheetindex) {
-
-		// SObject leadrec=new SObject();
-
+	public void InsertLead(String url, int sheetindex) {
 		ReadData readobj = new ReadData();
-
 		StoreData storeobj = new StoreData();
-
 		readobj.getpath(url);
 		readobj.getsheetindex(sheetindex);
 		readobj.rowcount();
