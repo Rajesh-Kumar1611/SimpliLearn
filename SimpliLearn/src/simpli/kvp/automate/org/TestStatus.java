@@ -59,7 +59,7 @@ public class TestStatus {
 		
 		SalesforceUtility.getConnection();
 		SalesforceUtility obj= new SalesforceUtility();
-		obj.Insert("D:/TestData2.xlsx",2);
+		obj.InsertLead("D:/TestData2.xlsx",2);
 		
 		//Now get the updated Lead status
 		
