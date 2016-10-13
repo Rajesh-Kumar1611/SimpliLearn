@@ -34,7 +34,6 @@
 	<classpathentry kind="lib" path="/home/rajesh/Desktop/selenium-2.53.1/libs/netty-3.5.7.Final.jar"/>
 	<classpathentry kind="lib" path="/home/rajesh/Desktop/selenium-2.53.1/libs/phantomjsdriver-1.2.1.jar"/>
 	<classpathentry kind="lib" path="/home/rajesh/Desktop/selenium-2.53.1/libs/testng-6.9.9.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
 	<classpathentry kind="src" path=".apt_generated">
 		<attributes>
 			<attribute name="optional" value="true"/>
@@ -42,5 +41,8 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="/media/rajesh/Work/Work/Weighsoft-App/WeighSoftUltimateKVP/lib/Salesforce/partner-18.jar"/>
 	<classpathentry kind="lib" path="/media/rajesh/Work/Work/Weighsoft-App/WeighSoftUltimateKVP/lib/Salesforce/wsc-22.jar"/>
+	<classpathentry kind="lib" path="/home/rajesh/Downloads/json-20160212.jar"/>
+	<classpathentry kind="lib" path="/home/rajesh/Downloads/commons-httpclient-2.0.2.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
