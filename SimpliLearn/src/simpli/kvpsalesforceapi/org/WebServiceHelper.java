@@ -8,13 +8,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.ByteArrayEntity;
+import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
@@ -24,30 +26,26 @@ public class WebServiceHelper {
 	public static void main(String[] args) {
 
 		try {
-			System.out.println(getAccessToken());
+			String access_token =getAccessToken();
+			String raw_body= " [{\"company\":\"\",\"country\":\"India\",\"description\":\"This is a test data\",\"email\":\"rahul12@fake.com\",\"firstName\":\"Test\",\"address\":\"Text\",\"city\":\"Gurgaon\",\"lastname\":\"Rajesh\",\"leadsource\":\"Chat\",\"phone\":\"+91-8904623622\",\"postalcode\":\"123\",\"title\":\"\",\"action_taken_most_recent\":\"\",\"action_Taken_Email_Phrase\":\"\",\"Browser\":\"\",\"Entry_Page\":\"http://www.simplilearn.com/project-bsrrter-and-its-importance-article|Expert Webinar: Why PMP|Thu, Aug 11, 2016 9:00 PM IST\",\"Lead_Type\":\"\",\"Operating_System\":\"\",\"Site_Module\":\"\",\"Topic_Interest\":\"\",\"URL_to_Click\":\", \",\"UTM_Campaign_First\":\"Text\",\"UTM_Campaign_Last\":\"Text\",\"UTM_First_Source\":\"Text\",\"UTM_Medium\":\"Text\",\"UTM_Source\":\"Text\",\"Website\":\"http://www.simplilearn.com/\",\"country_id\":\"101\",\"city_id\":\"201\",\"lead_creation_mode\":\"Text\",\"resource_tag_id\":\"301\",\"lead_stage\":\"New\",\"lead_status\":\"New\",\"product_type_id\":\"Text\",\"product_type_name\":\"\",\"product_id \":\"\",\"product_name\":\"Microsoft<sup>®</sup> Office 2013 Word::#::All-in-one Microsoft<sup>®</sup> Office 2010 Suite\",\"billing_type_id\":\"2\",\"billing_type_name\":\"\",\"category\":\"\",\"trainingType\":\"Text\",\"course_category_name\":\"\",\"queryType\":\"\",\"lead_ip\":\"\",\"first_cookie_source\":\"\",\"last_cookie_source\":\"Text\",\"device_name\":\"Text\",\"device_type\":\"Text\",\"querySourceName\":\"Text\",\"lead_entry_source\":\"Text\",\"queryCategory\":\"Text\",\"alternateEmail\":\"abcxyz@fake.com\",\"workshop\":\"2\",\"dates\":\"33\",\"lead_id\":\"\",\"alternatePhone\":\"3434\",\"queryType_name\":\"B2C\",\"stage_name\":\"New\",\"status_name\":\"New\"}]";
+			String response = doPostRequest(access_token, "https://cs6.salesforce.com/services/apexrest/LeadAPI", null, raw_body);
+			System.out.println(response);
 		} catch (KeyManagementException	| NoSuchAlgorithmException | IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
-	public static String doGetRequest(String access_token,String URL) throws ClientProtocolException, IOException
-	{
-		    @SuppressWarnings({ "resource", "deprecation" })
-	        HttpClient httpclient = new DefaultHttpClient();
-	        HttpGet get = new HttpGet(URL);
-	        get.addHeader("Authorization","OAuth "+access_token);
-	        HttpResponse response = httpclient.execute(get);
-	        String body = EntityUtils.toString(response.getEntity());
-	        return body;	
-	}
 	
-	public static String doPostRequest(String access_token,String URL,Map<String,String> request_params) throws ClientProtocolException, IOException
+	public static String doPostRequest(String access_token,String URL,Map<String,String> request_params,String raw_body) throws ClientProtocolException, IOException
 	{
+		
+			System.out.println("Raw Body"+raw_body);
 		    @SuppressWarnings({ "resource", "deprecation" })
 	        HttpClient httpclient = new DefaultHttpClient();
 	        HttpPost post = new HttpPost(URL);
 	        post.addHeader("Authorization","OAuth "+access_token);
+	        post.addHeader("Content-Type","application/json");
 	        if(request_params != null)
 	        {
 	        	
@@ -57,6 +55,13 @@ public class WebServiceHelper {
 		        	params.add(new BasicNameValuePair(header,request_params.get(header)));	
 		        }
 		        post.setEntity(new UrlEncodedFormEntity(params));
+	        }
+	        
+	        if(raw_body !=null)
+	        {
+	        	
+	        	HttpEntity http_entity = new ByteArrayEntity(raw_body.getBytes());
+	        	post.setEntity(http_entity);
 	        }
 	        
 	        HttpResponse response = httpclient.execute(post);

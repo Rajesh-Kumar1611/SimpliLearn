@@ -39,10 +39,10 @@
 			<attribute name="optional" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/media/rajesh/Work/Work/Weighsoft-App/WeighSoftUltimateKVP/lib/Salesforce/partner-18.jar"/>
-	<classpathentry kind="lib" path="/media/rajesh/Work/Work/Weighsoft-App/WeighSoftUltimateKVP/lib/Salesforce/wsc-22.jar"/>
 	<classpathentry kind="lib" path="/home/rajesh/Downloads/json-20160212.jar"/>
 	<classpathentry kind="lib" path="/home/rajesh/Downloads/commons-httpclient-2.0.2.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/home/rajesh/Desktop/Salesforce/partner-18.jar"/>
+	<classpathentry kind="lib" path="/home/rajesh/Desktop/Salesforce/wsc-22.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
