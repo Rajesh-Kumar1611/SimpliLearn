@@ -7,11 +7,13 @@ import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
@@ -29,6 +31,16 @@ public class WebServiceHelper {
 		}
 	}
 	
+	public static String doGetRequest(String access_token,String URL,Map<String,String> request_params) throws ClientProtocolException, IOException
+	{
+		    @SuppressWarnings({ "resource", "deprecation" })
+	        HttpClient httpclient = new DefaultHttpClient();
+	        HttpGet get = new HttpGet(URL);
+	        get.addHeader("Authorization","OAuth "+access_token);
+	        HttpResponse response = httpclient.execute(get);
+	        String body = EntityUtils.toString(response.getEntity());
+	        return body;	
+	}
 	
 	public static String doPostRequest(String access_token,String URL,Map<String,String> request_params) throws ClientProtocolException, IOException
 	{
