@@ -31,7 +31,7 @@ public class WebServiceHelper {
 		}
 	}
 	
-	public static String doGetRequest(String access_token,String URL,Map<String,String> request_params) throws ClientProtocolException, IOException
+	public static String doGetRequest(String access_token,String URL) throws ClientProtocolException, IOException
 	{
 		    @SuppressWarnings({ "resource", "deprecation" })
 	        HttpClient httpclient = new DefaultHttpClient();
